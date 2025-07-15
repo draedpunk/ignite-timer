@@ -93,7 +93,7 @@ export const Colon = styled.div`
     justify-content: center;
 `;
 
-export const StartButton = styled.button`
+export const BaseCountdownStartButton = styled.button`
     width: 100%;
     border: 0;
     padding: 1rem;
@@ -107,18 +107,34 @@ export const StartButton = styled.button`
     font-weight: bold;
 
     cursor: pointer;
-    background: ${props => props.theme["purple-500"]};
-    color: ${props => props.theme["gray-100"]};
 
     &:disabled{
         opacity: 0.7;
         cursor: not-allowed;
     }
 
+`;
+
+export const StartButton = styled(BaseCountdownStartButton)`
+
+    background: ${props => props.theme["purple-500"]};
+    color: ${props => props.theme["gray-100"]};
+
     &:not(:disabled):hover{
         background: ${props => props.theme["purple-700"]};
     }
 
+`;
+
+export const StopButton = styled(BaseCountdownStartButton)`
+
+    background: ${props => props.theme["red-500"]};
+    color: ${props => props.theme["gray-100"]};
+
+    &:not(:disabled):hover{
+        background: ${props => props.theme["red-700"]};
+    }
 
 `;
+
 
